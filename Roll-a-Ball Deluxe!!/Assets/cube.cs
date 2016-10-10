@@ -10,6 +10,10 @@ public class cube : MonoBehaviour {
 	public GameObject cubepickup;
 	public GameObject healthBar;
 	public Canvas allhealthBar;
+	public Text countText;
+	public Text winText;
+
+	private int count;
 
 //	private float barDisplay = 0;
 //	private Vector2 pos = new Vector2(20,40);
@@ -25,6 +29,9 @@ public class cube : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		cur_health = max_health;
+		count = 0;
+		SetCountText ();
+		winText.text = "";
 	}
 	void OnTriggerEnter (Collider other)
 	{
@@ -37,14 +44,20 @@ public class cube : MonoBehaviour {
 		if (cur_health <= 0f) {
 			Destroy (cubepickup.gameObject);
 			Destroy (allhealthBar.gameObject);
+			winText.text = "You Win!";
 		}
 		float calc_health = cur_health / max_health;
 		setHealthBar (calc_health);
+
 	}
 
 	void setHealthBar (float myHealth){
 		healthBar.transform.localScale = new Vector3 (myHealth, healthBar.transform.localScale.y, healthBar.transform.localScale.z);
 	
+	}
+	void SetCountText ()
+	{
+		countText.text = "Count: " + count.ToString ();
 	}
 //	void OnGUI(){
 //		// draw the background:

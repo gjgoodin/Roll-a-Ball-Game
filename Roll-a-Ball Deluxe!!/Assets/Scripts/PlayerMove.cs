@@ -5,23 +5,16 @@ using UnityEngine.UI;
 public class PlayerMove : MonoBehaviour {
 
 	public float speed;
-	public Text countText;
-	public Text winText;
-	public int maxHealth = 100;
-	public int curHealth = 100;
 	public GameObject club;
 	public GameObject sword;
 
 
 	private Rigidbody rb;
-	private int count;
+	public int count;
 
 	void Start ()
 	{
 		rb = GetComponent<Rigidbody>();
-		count = 0;
-		SetCountText ();
-		winText.text = "";
 	}
 
 	void FixedUpdate ()
@@ -45,6 +38,7 @@ public class PlayerMove : MonoBehaviour {
 		if (other.gameObject.CompareTag ("FWeaponClub")) {
 			other.gameObject.SetActive (false);
 			club.gameObject.SetActive (true);
+			sword.gameObject.SetActive (false);
 		}	
 		if (other.gameObject.CompareTag ("FWeaponSword")) {
 			other.gameObject.SetActive (false);
@@ -52,13 +46,13 @@ public class PlayerMove : MonoBehaviour {
 			club.gameObject.SetActive (false);
 		}	
 
-		if (count >= 11){
-			winText.text = "You Win!!";
-		}
-			
+//		if (count >= 11){
+//			winText.text = "You Win!!";
+//		}
+//			
 	}
-	void SetCountText ()
-	{
-		countText.text = "Count: " + count.ToString ();
-	}
+//	void SetCountText ()
+//	{
+//		countText.text = "Count: " + count.ToString ();
+//	}
 }
