@@ -49,6 +49,7 @@ public class PlayerMove : MonoBehaviour {
 		if (other.gameObject.CompareTag ("FWeaponSword")) {
 			other.gameObject.SetActive (false);
 			sword.gameObject.SetActive (true);
+			club.gameObject.SetActive (false);
 		}	
 
 		if (count >= 11){

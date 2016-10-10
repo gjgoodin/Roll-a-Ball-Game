@@ -29,7 +29,10 @@ public class cube : MonoBehaviour {
 	void OnTriggerEnter (Collider other)
 	{
 		if (other.gameObject.tag == "WeaponClub") {
-			decreaseHealth();					
+			cur_health -= 10f;					
+		}
+		if (other.gameObject.tag == "WeaponSword") {
+			cur_health -= 25f;					
 		}
 		if (cur_health <= 0f) {
 			Destroy (cubepickup.gameObject);
@@ -41,10 +44,6 @@ public class cube : MonoBehaviour {
 
 	void setHealthBar (float myHealth){
 		healthBar.transform.localScale = new Vector3 (myHealth, healthBar.transform.localScale.y, healthBar.transform.localScale.z);
-	
-	}
-	void decreaseHealth(){
-		cur_health -= 10f;
 	
 	}
 //	void OnGUI(){
