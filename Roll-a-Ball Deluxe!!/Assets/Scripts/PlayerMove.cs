@@ -10,6 +10,7 @@ public class PlayerMove : MonoBehaviour {
 	public int maxHealth = 100;
 	public int curHealth = 100;
 	public GameObject club;
+	public GameObject sword;
 
 
 	private Rigidbody rb;
@@ -45,6 +46,11 @@ public class PlayerMove : MonoBehaviour {
 			other.gameObject.SetActive (false);
 			club.gameObject.SetActive (true);
 		}	
+		if (other.gameObject.CompareTag ("FWeaponSword")) {
+			other.gameObject.SetActive (false);
+			sword.gameObject.SetActive (true);
+		}	
+
 		if (count >= 11){
 			winText.text = "You Win!!";
 		}
