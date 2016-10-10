@@ -8,15 +8,21 @@ public class ClubSwing : MonoBehaviour {
 	public GameObject club;
 	public Transform swing;
 	bool grabbed = false;
-
-	private string firebutton;
-	private bool fired;
+	public Animator anim;
 
 	// Update is called once per frame
+	void Start()
+	{
+		anim = GetComponent<Animator>();
+	}
+
 	void Update () {
 		if (grabbed) {
 			club.gameObject.SetActive (true);
 			transform.position = playerhand.transform.position;
+		}
+		if (Input.GetKeyDown ("space")) {
+			anim.Play ("Melee Swing", -1, 0f);
 		}
 	}
 
@@ -24,12 +30,5 @@ public class ClubSwing : MonoBehaviour {
 		if (other.gameObject.tag == "Player") {
 			grabbed = true;
 		}
-	}
-	void onFire (){
-		if (Input.GetButtonDown (firebutton)) {
-		}
-	}
-	private void Fire(){
-		fired = true;
 	}
 }
