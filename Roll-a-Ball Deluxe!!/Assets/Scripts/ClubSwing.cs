@@ -9,6 +9,7 @@ public class ClubSwing : MonoBehaviour {
 	public Transform swing;
 	bool grabbed = false;
 	public Animator anim;
+	public GameObject cubepickup;
 
 	// Update is called once per frame
 	void Start()
@@ -30,5 +31,12 @@ public class ClubSwing : MonoBehaviour {
 		if (other.gameObject.tag == "Player") {
 			grabbed = true;
 		}
+//		if (other.gameObject.tag == "Pick Up") {
+//			cube.health -= 50;
+//			print ("Hit v nice");
+//		}
+//		if (cube.health <= 0) {
+//			Destroy (cubepickup.gameObject);
+//		}
 	}
 }
