@@ -24,7 +24,7 @@ public class UltSwordSwing: MonoBehaviour {
 			transform.position = playerhand.transform.position;
 		}
 		if (Input.GetKeyDown ("space")) {
-			anim.Play ("", -1, 0f);
+			anim.Play ("UltSwordSwing", -1, 0f);
 		}
 		//			if (sword.gameObject.SetActive (true)) {
 		//				anim.Play ("SwordSwing", -1, 0f);

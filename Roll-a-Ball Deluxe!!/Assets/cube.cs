@@ -41,6 +41,9 @@ public class cube : MonoBehaviour {
 		if (other.gameObject.tag == "WeaponSword") {
 			cur_health -= 25f;					
 		}
+		if (other.gameObject.tag == "UltSword") {
+			cur_health -= 100f;					
+		}
 		float calc_health = cur_health / max_health;
 		setHealthBar (calc_health);
 

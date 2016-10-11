@@ -72,7 +72,7 @@ public class CameraController : MonoBehaviour {
 //}
 //
 		public GameObject target;
-		public float damping = 10;
+		public float damping;
 		Vector3 offset;
 
 		void Start() {
