@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class ClubSwing : MonoBehaviour {
+public class SwordSwing: MonoBehaviour {
 
 	public GameObject playerhand;
 	public GameObject club;
