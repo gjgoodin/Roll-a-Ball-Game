@@ -7,6 +7,7 @@ public class PlayerMove : MonoBehaviour {
 	public float speed;
 	public GameObject club;
 	public GameObject sword;
+	public GameObject ultsword;
 
 
 	private Rigidbody rb;
@@ -39,12 +40,21 @@ public class PlayerMove : MonoBehaviour {
 			other.gameObject.SetActive (false);
 			club.gameObject.SetActive (true);
 			sword.gameObject.SetActive (false);
+			ultsword.gameObject.SetActive (false);
 		}	
 		if (other.gameObject.CompareTag ("FWeaponSword")) {
 			other.gameObject.SetActive (false);
 			sword.gameObject.SetActive (true);
 			club.gameObject.SetActive (false);
+			ultsword.gameObject.SetActive (false);
 		}	
+
+		if (other.gameObject.CompareTag ("FUltSword")) {
+			other.gameObject.SetActive (false);
+			ultsword.gameObject.SetActive (true);
+			sword.gameObject.SetActive (false);
+			club.gameObject.SetActive (false);
+		}
 
 //		if (count >= 11){
 //			winText.text = "You Win!!";

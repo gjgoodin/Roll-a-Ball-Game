@@ -6,6 +6,7 @@ public class ClubSwing : MonoBehaviour {
 
 	public GameObject playerhand;
 	public GameObject club;
+	public GameObject sword;
 	public Transform swing;
 	bool grabbed = false;
 	public Animator anim;
@@ -24,7 +25,12 @@ public class ClubSwing : MonoBehaviour {
 		}
 		if (Input.GetKeyDown ("space")) {
 			anim.Play ("Melee Swing", -1, 0f);
-		}
+			}
+//			if (sword.gameObject.SetActive (true)) {
+//				anim.Play ("SwordSwing", -1, 0f);
+//			}
+//			if (sword.gameObject.SetActive (true)) {
+//			}
 	}
 
 	void OnTriggerEnter (Collider other) {

@@ -52,7 +52,10 @@
      <Compile Include="Assets\Scripts\rotator.cs" />
      <Compile Include="Assets\Swing.cs" />
      <Compile Include="Assets\SwingTrigger.cs" />
+     <Compile Include="Assets\SwordSwing.cs" />
+     <Compile Include="Assets\UltSwordSwing.cs" />
      <Compile Include="Assets\cube.cs" />
+     <None Include="Assets\Forest Grounds - Terrain Texture Pack\Readme.txt" />
      <None Include="Assets\Stone Age Weapons Pack\Readme.txt" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>

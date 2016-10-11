@@ -41,15 +41,19 @@ public class cube : MonoBehaviour {
 		if (other.gameObject.tag == "WeaponSword") {
 			cur_health -= 25f;					
 		}
-		if (cur_health <= 0f) {
-			Destroy (cubepickup.gameObject);
-			Destroy (allhealthBar.gameObject);
-			winText.text = "You Win!";
-		}
 		float calc_health = cur_health / max_health;
 		setHealthBar (calc_health);
 
+		if (cur_health <= 0f) {
+			Destroy (cubepickup.gameObject);
+			Destroy (allhealthBar.gameObject);
+			count += 1;
+			SetCountText ();
+		}
+
+
 	}
+
 
 	void setHealthBar (float myHealth){
 		healthBar.transform.localScale = new Vector3 (myHealth, healthBar.transform.localScale.y, healthBar.transform.localScale.z);
